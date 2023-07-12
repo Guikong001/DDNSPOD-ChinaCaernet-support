@@ -1,6 +1,6 @@
 # ArDNSPod-China-CarnetIP-support
 
-该项目源代码来自rehiy/dnspod-shell、ArDNSPod（已经找不到了），然后将获取IP的方式进行了一些修改，可以实现查询到中国高等院校的校园网IP地址。
+该项目源代码来自rehiy/dnspod-shell、ArDNSPod（已经找不到了），然后将获取IP的方式进行了一些修改，可以实现查询到中国高等院校的校园网IP地址。同时结合cron任务，通过ntfy项目实现将ddns的实施结果推动到客户端的功能。
 
 # Usage
 
@@ -28,6 +28,8 @@ arToken="12345,7676f344eaeaea9074c123451234512d"
 arDdnsCheck "test.org" "subdomain"
 ```
 
+# ntfy推送
+report.sh是将当前的IP地址和ddns的状态推动到ntfy服务器的脚本。下载ntfy或登录ntfy网站，使用ntfy的服务器设置一个自己的推送地址，随后修改report.sh中的地址即可使用，ntfy具体使用方法见Github项目Ntfy。结合cron定时实现自动DDNS和推送的功能。
 
 # Credit
 
